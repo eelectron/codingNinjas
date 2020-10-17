@@ -53,6 +53,16 @@ public class Graph<T extends Comparable>{
         return adj.get(v); 
     }
     
+    public void addVertex(T v) {
+    	if(adj.containsKey(v) == false) {
+    		adj.put(v, new HashSet<Edge<T>>());
+    	}
+    }
+    
+    public boolean contains(T v) {
+    	return adj.containsKey(v);
+    }
+    
     public Set<T> getVertices(){
     	return adj.keySet();
     }

@@ -35,7 +35,7 @@ public class BFS<T extends Comparable>{
             // add child
             for(Edge<T> e : G.adj(nd)){
                 T v = e.other(nd);
-                if(vis.get(v) == false){
+                if(vis.containsKey(v) == false){
                     q.add(v);
                     vis.put(v, true);
                     parent.put(v, nd);
@@ -77,10 +77,10 @@ public class BFS<T extends Comparable>{
     /*
     Return all connected component .
     */
-    Map<Integer, HashSet<T>> getConnectedComponent(){
+    public Map<Integer, HashSet<T>> getConnectedComponent(){
         int cid = 0;
         for(T v : G.getVertices()){
-            if(vis.get(v) == false){
+            if(vis.containsKey(v) == false){
                 visit(v, cid);
                 cid += 1;
             }

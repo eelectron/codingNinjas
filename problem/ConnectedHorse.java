@@ -8,6 +8,16 @@ import graph.Graph;
 import graph.Vertex;
 
 public class ConnectedHorse {
+	static long MOD = 1000000007;
+	
+	 // Method to find factorial of given number 
+    static long factorial(long n) { 
+        long res = 1; 
+        for (long i=2; i<=n; i++) 
+        	res = (res % MOD * (i % MOD)) % MOD; 
+        return res; 
+    } 
+    
 	public static void main(String[] args) {
 		// Write your code here
         Scanner sc = new Scanner(System.in);
@@ -19,18 +29,18 @@ public class ConnectedHorse {
             horses = sc.nextInt();
             
             // read horses
-            Set<Vertex> H = new HashSet<Vertex>();
+            Graph<Vertex> G = new Graph<Vertex>(horses);
             int hx, hy;
             for(int i = 0; i < horses; i++) {
             	hx = sc.nextInt();
             	hy = sc.nextInt();
             	Vertex v = new Vertex(hx, hy);
-            	H.add(v);
+            	G.addVertex(v);
             }
             
             // add edge to graph
-            Graph<Vertex> G = new Graph<Vertex>(H.size());
-            for(Vertex vt : H) {
+            
+            for(Vertex vt : G.getVertices()) {
             	// horse can jump at
             	for(int i = -2; i <= 2; i += 1) {
             		if(i == 0) {
@@ -47,14 +57,14 @@ public class ConnectedHorse {
             		}
             		
             		Vertex pe = new Vertex(vt.x + i, vt.y + dj);
-        			if(H.contains(pe)) {
+        			if(G.contains(pe)) {
         				// horse at vt can jump to pe
         				Edge<Vertex> e = new Edge<Vertex>(vt, pe, 1);
         				G.addEdge(e);
         			}
         			
         			pe = new Vertex(vt.x + i, vt.y - dj);
-        			if(H.contains(pe)) {
+        			if(G.contains(pe)) {
         				// horse at vt can jump to pe
         				Edge<Vertex> e = new Edge<Vertex>(vt, pe, 1);
         				G.addEdge(e);
@@ -69,11 +79,13 @@ public class ConnectedHorse {
             Map<Integer, HashSet<Vertex>> cc = bfs.getConnectedComponent();
             
             // find x! * y! * ... * z! where x, y, z are size of each connected component
-            long ans = 0;
-            for(Map.Entry<Integer, HashSet<Vertex>> entry: cc) {
+            long ans = 1;
+            for(Map.Entry<Integer, HashSet<Vertex>> entry: cc.entrySet()) {
             	HashSet<Vertex> nodes = entry.getValue();
-            	ans += factorialnodes.size();
+            	ans *= factorial(nodes.size());
+            	ans %= MOD;
             }
+            System.out.println(ans);
         }
 	}
 }
