@@ -1,4 +1,4 @@
-package graph;
+package problem;
 import java.util.Scanner;
 
 public class ConnectingDots {

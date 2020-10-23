@@ -1,5 +1,4 @@
 package graph;
-
 import java.util.*;
 
 public class Graph<T extends Comparable>{
@@ -9,21 +8,19 @@ public class Graph<T extends Comparable>{
     public Graph(int V){
         this.V = V;
         this.E = 0;
-        adj = new HashMap<T, HashSet<Edge<T>>>(V);
+        adj = new HashMap<T, HashSet<Edge<T>>>();
     }
     
     public void addEdge(Edge<T> e){
         T u = e.either(), v = e.other(u);
-        if(adj.get(u) == null) {
+        if(adj.containsKey(u) == false) {
         	adj.put(u, new HashSet<Edge<T>>());
         }
         
-        if(adj.get(v) == null) {
+        if(adj.containsKey(v) == false) {
         	adj.put(v, new HashSet<Edge<T>>());
         }
         adj.get(u).add(e);
-        adj.get(v).add(e);
-        
         E += 1;
     }
     
@@ -36,9 +33,22 @@ public class Graph<T extends Comparable>{
     	if(adj.containsKey(dst) == false) {
     		adj.put(dst, new HashSet<Edge<T>>());
     	}
-    	
     	adj.get(src).add(e);
-    	adj.get(dst).add(e);
+    }
+    
+    public Graph reverse() {
+    	Graph<T> gRev = new Graph<T>(V);
+    	
+    	// iterate over original graph and add its edge
+    	// reversed in gRev
+    	for(Map.Entry<T, HashSet<Edge<T>>> entry: adj.entrySet()) {
+    		HashSet<Edge<T>> edges = entry.getValue();
+    		// iterate over edges
+    		for(Edge<T> e: edges) {
+    			gRev.addEdge(e.reverse());
+    		}
+    	}
+    	return gRev;
     }
     
     public int V(){
@@ -49,8 +59,12 @@ public class Graph<T extends Comparable>{
         return E;
     }
     
-    public Iterable<Edge<T>> adj(T v){ 
-        return adj.get(v); 
+    public Iterable<Edge<T>> adj(T v){
+    	HashSet<Edge<T>> edges = adj.get(v);
+    	if(edges == null) {
+    		return new HashSet<Edge<T>>();
+    	}
+        return edges; 
     }
     
     public void addVertex(T v) {

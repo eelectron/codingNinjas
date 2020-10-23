@@ -16,7 +16,12 @@ public class Edge<T extends Comparable> implements Comparable<Edge>{
     public T other(T vertex){
         if(u.equals( vertex)) 		return v;
         else if(v.equals(vertex))	return u;
-        else throw new RuntimeException("Incosistent Edge");
+        else throw new RuntimeException("Inconsistent Edge");
+    }
+    
+    public Edge<T> reverse(){
+    	Edge<T> edge = new Edge<T>(v, u, w);
+    	return edge;
     }
     
     /*

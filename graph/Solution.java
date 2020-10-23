@@ -1,62 +1,17 @@
 package graph;
 import java.util.*;
 
-class UF{
-    private int[] parent;
-    private int[] treeSize;
-    UF(int n){
-        parent = new int[n];
-        treeSize = new int[n];
-        
-        for(int i = 0; i < n; i++){
-            parent[i] = i;
-            treeSize[i] = 1;
-        }
-    }
-    
-    private int find(int node){
-        int x = node;
-        while(x != parent[x]){
-            x = parent[x];
-        }
-        return x;
-    }
-    
-	public void union(int u, int v){
-        int ru = find(u);
-        int rv = find(v);
-        if(isConnected(u, v) == true){
-            return;
-        }
-        
-        if(treeSize[ru] >= treeSize[rv]){
-            parent[rv] = ru;
-            treeSize[ru] += treeSize[rv];
-        }
-        else{
-            parent[ru] = rv;
-            treeSize[rv] += treeSize[ru];
-        }
-    }    
-    
-    public boolean isConnected(int u, int v){
-        int ru = find(u);
-        int rv = find(v);
-        return ru == rv;
-    }
-}
-
-class KruskalMST{
-    private List<Edge> mst;
+class KruskalMST<T extends Comparable>{
+    private List<Edge<T>> mst;
     private float weight;
-    KruskalMST(Graph g){
+    KruskalMST(Graph<T> g){
         weight = 0;
-        mst = new ArrayList<Edge>();
-        PriorityQueue<Edge> pq = new PriorityQueue(g.edges());
+        mst = new ArrayList<Edge<T>>();
+        PriorityQueue<Edge<T>> pq = new PriorityQueue(g.edges());
         UF uf = new UF(g.V());
         while(pq.isEmpty() == false && mst.size() < g.V() - 1){
-            Edge e = pq.poll();
-            int u = e.either(), v = e.other(u);
+            Edge<T> e = pq.poll();
+            T u = e.either(), v = e.other(u);
             if(uf.isConnected(u, v) == true){
                 continue;
             }
@@ -66,7 +21,7 @@ class KruskalMST{
         }
     }
     
-	Iterable<Edge> edges(){
+	List<Edge<T>> edges(){
         return mst;
     }   
     
@@ -87,7 +42,7 @@ public class Solution {
 		 */
         
         //read edge
-        Graph g = new Graph(V);
+        Graph<Integer> g = new Graph<Integer>(V);
         int u, v;
         float w;
         for(int i = 0; i < E; i++){
@@ -98,8 +53,8 @@ public class Solution {
             g.addEdge(e);
         }
         
-        KruskalMST mst = new KruskalMST(g);
-        Iterable<Edge> edges = mst.edges();
+        KruskalMST<Integer> mst = new KruskalMST<Integer>(g);
+        Iterable<Edge<Integer>> edges = mst.edges();
         for(Edge e: edges){
             System.out.println(e);
         }

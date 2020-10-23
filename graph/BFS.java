@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Stack;
 
 public class BFS<T extends Comparable>{
     Map<T, Boolean> vis;		// mark visited vertex
@@ -49,19 +50,20 @@ public class BFS<T extends Comparable>{
     }
     
     // print path from u to v in reverse order
-    boolean getPath(T u, T v){
+    public Stack<T> getPath(T u, T v){
         // create bfs tree
         visit(u, 0);
-        
-        if(hasPath(u, v) == false){
-            return false;						// no path
-        }
-        
+        Stack<T> path = new Stack<T>();
         // build path from u to v in reverse order
+        path.push(v);
         while(v != parent.get(v)){
             v = parent.get(v);
+            if(v == null) {
+            	break;
+            }
+            path.push(v);
         }
-        return true;
+        return path;
     }
     
     /*Return true if graph is connected*/
