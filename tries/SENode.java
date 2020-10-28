@@ -19,6 +19,6 @@ public class SENode {
 	}
 	
 	public String toString() {
-		return children.toString() + w;
+		return children.toString() + " " + w + " " + isWord;
 	}
 }
