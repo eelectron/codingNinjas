@@ -2,6 +2,7 @@ package numberTheory;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Sieve {
 	private long n;
@@ -66,5 +67,18 @@ public class Sieve {
             pf.put((int)n, 1);
         }
 		return pf;
+	}
+	
+	/*
+	 * get all divisor*/
+	public HashSet<Long> getDivisors(long n){
+		HashSet<Long> dv = new HashSet<Long>();
+		for(long i = 1; i * i <= n; i++) {
+			if(n % i == 0) {
+				dv.add(i);
+				dv.add(n / i);
+			}
+		}
+		return dv;
 	}
 }
