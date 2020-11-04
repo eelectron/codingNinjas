@@ -1,6 +1,7 @@
 package numberTheory;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Sieve {
 	private long n;
@@ -40,5 +41,30 @@ public class Sieve {
 	
 	public boolean[] getPrimes() {
 		return primes;
+	}
+	
+	/*
+	 * Return prime factors */
+	public HashMap<Integer, Integer> primeFactors(long n){
+		HashMap<Integer, Integer> pf = new HashMap<Integer, Integer>();
+        
+		int count = 0;
+        long tn = n;
+		for(int i = 2; (i * i <= tn); i++) {
+			count = 0;
+			while(n % i == 0) {
+				count += 1;
+				n /= i;
+			}
+			
+			if(count > 0) {
+				pf.put(i, count);
+			}
+		}
+        
+        if(n != 1){
+            pf.put((int)n, 1);
+        }
+		return pf;
 	}
 }
