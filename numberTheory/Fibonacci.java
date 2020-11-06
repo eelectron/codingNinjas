@@ -1,19 +1,19 @@
 package numberTheory;
 
 public class Fibonacci {
-	int[][] M = {{1, 1}, {1, 0}};
-	int MOD = 1000000007;
+	long[][] M = {{1, 1}, {1, 0}};
+	long MOD = 1000000007 - 1;
 	public long fib(long n) {
 		if(n == 0) {
 			return 0;
 		}
 		
-		int[][] A = {{1, 1}, {1, 0}};
+		long[][] A = {{1, 1}, {1, 0}};
 		power(A, n - 1);
 		return A[0][0];
 	}
 	
-	public void power(int[][] A, long n) {
+	private void power(long[][] A, long n) {
 		if(n <= 1) {
 			return;
 		}
@@ -29,17 +29,18 @@ public class Fibonacci {
 	/*
 	 * Multiply two matrix .
 	 * Their dimension */
-	public void multiply(int[][] A, int[][] B) {
+	private void multiply(long[][] A, long[][] B) {
 		int p = A.length, q = A[0].length, r = B.length, s = B[0].length;
 		if(q != r) {
 			return;
 		}
 		
-		int[][] C = new int[p][s];
+		long[][] C = new long[p][s];
 		for(int i = 0; i < p; i++) {
 			for(int j = 0; j < s; j++) {
 				for(int k = 0; k < q; k++) {
 					C[i][j] += A[i][k] * B[k][j];
+					C[i][j] = C[i][j] % MOD;
 				}
 			}
 		}

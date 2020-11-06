@@ -5,12 +5,12 @@ public class Exponent {
 		
 	}
 	
-	public long modExpRec(int a, int b, int c) {
+	public long modExpRec(long a, long b, long c) {
 		if(a == 0) {
 			return 0;
 		}
 		
-		if(b == 0) {
+		if(b == 0 || a == 1) {
 			return 1;
 		}
 		
@@ -28,12 +28,16 @@ public class Exponent {
 		return ans;
 	}
 	
+	/* 
+	 * Returns modular exponentiation
+	 * (a^b) % c
+	 * */
 	public long modExpIt(long a, long b, long c) {
 		if(a == 0) {
 			return 0;
 		}
 		
-		if(b == 0) {
+		if(b == 0 || a == 1) {
 			return 1;
 		}
 		

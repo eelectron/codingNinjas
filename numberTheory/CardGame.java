@@ -100,7 +100,9 @@ public class CardGame {
 	}
 	
 	/*
-	 * Return prime factors */
+	 * Return prime factors 
+	 * 12 = 2^2 * 3
+	 * Return ([2,2], [3,1])*/
 	public HashMap<Integer, Integer> primeFactors(long n){
 		HashMap<Integer, Integer> pf = new HashMap<Integer, Integer>();
         

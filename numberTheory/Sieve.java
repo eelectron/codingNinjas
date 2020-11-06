@@ -69,8 +69,10 @@ public class Sieve {
 		return pf;
 	}
 	
-	/*
-	 * get all divisor*/
+	/* O(sqrt(n))
+	 * get all divisor
+	 * for ex 12 has 1, 2, 3, 4, 6, 12 as divisors
+	 * */
 	public HashSet<Long> getDivisors(long n){
 		HashSet<Long> dv = new HashSet<Long>();
 		for(long i = 1; i * i <= n; i++) {
