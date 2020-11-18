@@ -3,9 +3,9 @@ package graph;
 import java.util.HashSet;
 
 public class UF{
-    private int[] parent;
-    private int[] treeSize;
-    private int setCount;
+    private int[] parent;		// parent[i] = set no. to which i belongs
+    private int[] treeSize;		// treeSize[i] = no. of nodes in subtree rooted at i
+    private int setCount;		// count of disjoint sets made
     public UF(int n){
         parent = new int[n];
         treeSize = new int[n];
