@@ -49,8 +49,9 @@ class Dijkstra{
                     distTo[dn.v] = dn.d;
                 } 
                 
+                Iterable<Edge<Integer>> edges = G.adj(dn.v);
                 // add adj node to queue
-                for(Edge e : G.adj(dn.v)){
+                for(Edge<Integer> e : edges){
 					int v = e.other(dn.v);
                     if(vis[v] == false){
                     	pq.add(new DistNode(v, dn.d + e.weight()));    
