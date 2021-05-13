@@ -3,6 +3,12 @@ package string;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * https://leetcode.com/problems/first-unique-character-in-a-string/
+ * 
+ * The approach for this question 
+ * https://sites.google.com/view/leetcodepractice/firstuniquechar
+ * */
 public class FirstUniqueChar {
     public int firstUniqChar(String s) {
         int n = s.length();
