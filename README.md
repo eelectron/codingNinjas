@@ -12,3 +12,5 @@
 - [ContainerWithMostWater](https://github.com/eelectron/competitiveProgramming/blob/java/array/ContainerWithWater.java)
 - [TrappingRain](https://github.com/eelectron/competitiveProgramming/blob/java/array/TrappingRainWater.java)
 - [LargestHistogram](https://github.com/eelectron/competitiveProgramming/blob/java/array/LargestHistogram.java)
+- [MaximalRectangle](https://github.com/eelectron/competitiveProgramming/blob/java/array/MaximalRectangle.java)
+
