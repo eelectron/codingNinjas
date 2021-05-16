@@ -14,3 +14,5 @@
 - [LargestHistogram](https://github.com/eelectron/competitiveProgramming/blob/java/array/LargestHistogram.java)
 - [MaximalRectangle](https://github.com/eelectron/competitiveProgramming/blob/java/array/MaximalRectangle.java)
 - [MaximalSquare](https://github.com/eelectron/competitiveProgramming/blob/java/array/MaximalSquare.java)
+- [FractionToDecimal](https://github.com/eelectron/competitiveProgramming/blob/java/numerical/FractionToRecurringDecimal.java)
+
