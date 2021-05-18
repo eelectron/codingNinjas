@@ -1,6 +1,5 @@
 # competitiveProgramming
 - https://leetcode.com/
-- https://www.codingninjas.com/
 
 # Goldman Question
 - [ClimbStair](https://github.com/eelectron/competitiveProgramming/blob/java/dynamicProgramming/ClimbStair.java)
