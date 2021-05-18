@@ -16,5 +16,5 @@
 - [MaximalSquare](https://github.com/eelectron/competitiveProgramming/blob/java/array/MaximalSquare.java)
 - [FractionToDecimal](https://github.com/eelectron/competitiveProgramming/blob/java/numerical/FractionToRecurringDecimal.java)
 - [MaxSizeSubarray](https://github.com/eelectron/competitiveProgramming/blob/java/array/MaxSizeSubarray.java)
-
+- [CircularArray](https://github.com/eelectron/competitiveProgramming/blob/java/array/CircularArrayLoop.java)
 
