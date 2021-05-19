@@ -17,4 +17,5 @@
 - [MaxSizeSubarray](https://github.com/eelectron/competitiveProgramming/blob/java/array/MaxSizeSubarray.java)
 - [CircularArray](https://github.com/eelectron/competitiveProgramming/blob/java/array/CircularArrayLoop.java)
 - [LargestNum](https://github.com/eelectron/competitiveProgramming/blob/java/array/LargestNum.java)
+- [LRUCache](https://github.com/eelectron/competitiveProgramming/blob/java/design/LRUCache.java)
 
