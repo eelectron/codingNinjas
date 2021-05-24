@@ -21,4 +21,6 @@
 - [FindAnagram](https://github.com/eelectron/competitiveProgramming/blob/java/string/Anagram.java)
 - [ValidAnagram](https://github.com/eelectron/competitiveProgramming/blob/java/string/ValidAnagram.java)
 - [GroupAnagram](https://github.com/eelectron/competitiveProgramming/blob/java/string/GroupAnagram.java)
+- [ShortestPathBinaryMatrix](https://github.com/eelectron/competitiveProgramming/blob/java/graph/ShortestPathBinaryMatrix.java)
+- [MinPathSum](https://github.com/eelectron/competitiveProgramming/blob/java/matrix/MinPathSum.java)
 
