@@ -30,6 +30,8 @@ public class PowerOfTen {
     /*
      * T : O(logn) , depends on implementation of Math.log10
      * S : O(1)
+     * Idea : If number n is power of 10 , then exp = Math.log10(n) is ALWAYS integer
+     * otherwise it will have fractional part .
      * */
     public boolean isPowerOfTen(long n) {
         double exp = Math.log10(n);
