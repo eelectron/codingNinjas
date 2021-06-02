@@ -23,4 +23,5 @@
 - [GroupAnagram](https://github.com/eelectron/competitiveProgramming/blob/java/string/GroupAnagram.java)
 - [ShortestPathBinaryMatrix](https://github.com/eelectron/competitiveProgramming/blob/java/graph/ShortestPathBinaryMatrix.java)
 - [MinPathSum](https://github.com/eelectron/competitiveProgramming/blob/java/matrix/MinPathSum.java)
+- [PowerOfTen](https://github.com/eelectron/competitiveProgramming/blob/java/numerical/PowerOfTen.java)
 
