@@ -1,6 +1,7 @@
 package array;
 
 /*
+ * https://leetcode.com/submissions/detail/502743473/
  * Idea : keep the most recent index of both words seen so far
  * */
 class ShortestWordDistance {
