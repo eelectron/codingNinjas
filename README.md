@@ -28,4 +28,5 @@
 - [ShortestWordDisII](https://github.com/eelectron/competitiveProgramming/blob/java/array/ShortestWordDistanceII.java)
 - [ShortestWordDisIII](https://github.com/eelectron/competitiveProgramming/blob/java/array/ShortestWordDistanceIII.java)
 - [Pangram](https://github.com/eelectron/competitiveProgramming/blob/java/string/src/Pangram.java)
+- [LongestUniformSubstring](https://github.com/eelectron/competitiveProgramming/blob/java/string/src/LongestUniformSubstring.java)
 
