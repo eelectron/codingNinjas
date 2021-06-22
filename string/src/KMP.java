@@ -1,4 +1,4 @@
-package string;
+package string.src;
 
 public class KMP {
 	public KMP() {

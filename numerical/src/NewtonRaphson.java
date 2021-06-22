@@ -1,4 +1,4 @@
-package numerical;
+package numerical.src;
 
 public class NewtonRaphson {
 	public static void main(String[] args) {
