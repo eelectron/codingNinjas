@@ -1,5 +1,8 @@
 package string.src;
 
+/*
+ * Get the length and index of longest uniform substring 
+ * */
 public class LongestUniformSubstring {
     public int[] longestUniformSubstring(String input) {
         int longestStart = -1;

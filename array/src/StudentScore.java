@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/*
+ * Get the best average score of given students 
+ * https://leetcode.com/problems/high-five/
+ * */
 public class StudentScore {
 	public int getBestAverageScore(String[][] scores) {
 		Map<String, List<Integer>> students = new HashMap<>();
