@@ -11,7 +11,7 @@ public class LongestUniformSubstring {
         // todo: implement the longestUniformSubstring logic
         int n = input.length();
         
-        int ch         = -1;
+        int ch         = -1;	// assuming -1 is invalid input character
         int count       = 0;
         int charIndex   = -1;
         for(int i = 0; i < n; i++){

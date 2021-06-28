@@ -1,4 +1,4 @@
-package array;
+package array.src;
 /*
  * Prerequisite : largest histogram https://leetcode.com/submissions/detail/492954779/
  * 

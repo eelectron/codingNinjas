@@ -1,4 +1,4 @@
-package array;
+package array.src;
 
 /*
  * Prerequisite : please understand this problem (Largest Histogram) https://leetcode.com/submissions/detail/492954779/

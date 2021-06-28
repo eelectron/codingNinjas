@@ -1,4 +1,4 @@
-package array;
+package array.src;
 
 import java.util.*;
 import java.io.BufferedReader;

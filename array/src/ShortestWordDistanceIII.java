@@ -1,4 +1,4 @@
-package array;
+package array.src;
 
 /*
  * https://leetcode.com/submissions/detail/502781971/
