@@ -46,4 +46,25 @@ public class LongestPalindromicSubstring {
         }
         return s.substring(si, ei + 1);
     }
+    
+    public static void main(String[] args){
+    	LongestPalindromicSubstring sol = new LongestPalindromicSubstring();
+        sol.testLongestPalindrome();
+      }
+      
+      public void testLongestPalindrome(){
+    	LongestPalindromicSubstring sol = new LongestPalindromicSubstring();
+        boolean res = true;
+        res = res && ("m".equals(sol.longestPalindrome("m")));
+        res = res && ("cac".equals(sol.longestPalindrome("bcacd")));
+        res = res && ("a".equals(sol.longestPalindrome("abcd")));
+        res = res && ("aaaa".equals(sol.longestPalindrome("aaaa")));
+        res = res && ("".equals(sol.longestPalindrome("")));
+        if(res){
+          System.out.println("All test passed .");
+        }
+        else{
+          System.out.println("At least one test is failing .");
+        }
+      }
 }

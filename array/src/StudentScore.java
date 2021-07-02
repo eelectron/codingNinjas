@@ -10,37 +10,89 @@ import java.util.Map;
  * */
 public class StudentScore {
 	public int getBestAverageScore(String[][] scores) {
-		Map<String, List<Integer>> students = new HashMap<>();
+		Map<String, Student> students = new HashMap<>();
         int n = scores.length;
         if(n == 0){
             return 0;
         }
 
         String name = "";
-        int score = 0;
+        double score = 0;
         for(int i = 0; i < n; i++){
             name    = scores[i][0];
             score = Integer.parseInt(scores[i][1]);
             
-            List<Integer> scoreList = students.get(name);
-            if(scoreList == null){
-                scoreList = new ArrayList<>();    // using min heap
-                students.put(name, scoreList);
+            Student stud = students.get(name);
+            if(stud == null){
+                stud = new Student(0, 0);    // using min heap
+                students.put(name, stud);
             }
-            scoreList.add(score);
+            
+            // find the moving average
+            stud.count += 1;
+            stud.avg = (((stud.count - 1) * stud.avg) + score) / stud.count;
         }
         
         
         int bestAvg = Integer.MIN_VALUE;
-        double curAvg = 0;
-        for(Map.Entry<String, List<Integer>> entry : students.entrySet()){
-            List<Integer> scoreList = entry.getValue();
-            curAvg = scoreList.stream().mapToInt(x -> x).sum();
-            curAvg = Math.floor(curAvg / scoreList.size());
+        int curAvg = 0;
+        for(Map.Entry<String, Student> entry : students.entrySet()){
+            Student stud = entry.getValue();
+            curAvg = (int)Math.floor(stud.avg);
             if(curAvg > bestAvg) {
-            	bestAvg = (int)curAvg;
+            	bestAvg = curAvg;
             }
         }
-		return bestAvg;
+		return (int)bestAvg;
 	}
+	
+	public static void main(String[] args){
+		StudentScore ss = new StudentScore();
+	    System.out.println("Hello");
+	    ss.testGetBestAverageScore();
+	  }
+	  
+	  public void testGetBestAverageScore() {
+	    StudentScore ss = new StudentScore();
+	    
+	    boolean res = true;
+	    String[][] tc1 = {{"Bobby", "2"},{"Bobby", "2"}};
+	    res = res && (2 == ss.getBestAverageScore(tc1));
+	    
+	    String[][] tc2 = {};
+	    res = res && (0 == ss.getBestAverageScore(tc2));
+	    
+	    String[][] tc3 = {{"Bobby", "2"},{"Bobby", "2"},{"Charles", "4"},{"Charles", "4"}};
+	    res = res && (4 == ss.getBestAverageScore(tc3));
+	    
+	    String[][] tc4 = {{"Bobby", "-2"},{"Bobby", "-2"},{"Charles", "-4"},{"Charles", "-4"}};
+	    res = res && (-2 == ss.getBestAverageScore(tc4));
+	    
+	    if(res){
+	      System.out.println("All tests pass .");
+	    }
+	    else{
+	      System.out.println("Atleast one test is failing");
+	    }
+	  }
+}
+
+class Student{
+	int count;
+	double avg;
+	Student(int count, double avg){
+		this.count = count;
+		this.avg = avg;
+	}
+	
+	Student(){
+		this.count = 0;
+		this.avg = 0;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [count=" + count + ", avg=" + avg + "]";
+	}
+	
 }
