@@ -24,7 +24,7 @@ public class StudentScore {
             
             Student stud = students.get(name);
             if(stud == null){
-                stud = new Student(0, 0);    // using min heap
+                stud = new Student(0, 0);
                 students.put(name, stud);
             }
             
