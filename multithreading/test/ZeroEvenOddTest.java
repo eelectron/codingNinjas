@@ -1,4 +1,4 @@
-package multithreading.src;
+package multithreading.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
