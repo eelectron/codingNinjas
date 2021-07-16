@@ -1,5 +1,7 @@
 package string.src;
 
+import static org.junit.Assert.assertEquals;
+
 /*
 Question # 11
 Missing characters to make a string Pangram 
@@ -43,5 +45,22 @@ public class Pangram {
             } 
         }
         return res;
+    }
+    
+    public static void main(String[] args) {
+    	Pangram pg = new Pangram();
+    	pg.testGetAllMissingCharacter();
+	}
+    
+    public void testGetAllMissingCharacter() {
+        Pangram pg = new Pangram();
+        assertEquals("Expected \"z\" as output", "z", pg.getAllMissingCharacter("abcdefghijklmnopqrstuvwxy"));
+        assertEquals("Expected \"abcdfgijkmnpqrstuvwxyz\" ", "abcdfgijkmnpqrstuvwxyz", pg.getAllMissingCharacter("hello"));
+        assertEquals("Expected empty string", "", pg.getAllMissingCharacter("abcdefghijklmnopqrstuvwxyz"));
+        assertEquals("Expected all letters", "abcdefghijklmnopqrstuvwxyz", pg.getAllMissingCharacter(""));
+        assertEquals("abdhijnpquvxyz", pg.getAllMissingCharacter("welcome to geeksforgeeks"));
+        assertEquals("adglvyz", pg.getAllMissingCharacter("The quick brown fox jumps"));
+        assertEquals("bdfjkpquvxyz", pg.getAllMissingCharacter(" Writing ALGorithmic tests!"));
+        System.out.println("All tests passed !");
     }
 }

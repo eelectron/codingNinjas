@@ -15,7 +15,9 @@ public class StudentScore {
         if(n == 0){
             return 0;
         }
-
+        int bestAvg = Integer.MIN_VALUE;
+        int curAvg = 0;
+        
         String name = "";
         double score = 0;
         for(int i = 0; i < n; i++){
@@ -31,11 +33,12 @@ public class StudentScore {
             // find the moving average
             stud.count += 1;
             stud.avg = (((stud.count - 1) * stud.avg) + score) / stud.count;
+            /*if((int)stud.avg > bestAvg) {
+            	bestAvg = (int)stud.avg;
+            }*/
         }
         
         
-        int bestAvg = Integer.MIN_VALUE;
-        int curAvg = 0;
         for(Map.Entry<String, Student> entry : students.entrySet()){
             Student stud = entry.getValue();
             curAvg = (int)Math.floor(stud.avg);
