@@ -1,4 +1,4 @@
-package multithreading.src;
+package multithreading.zeroevenodd.src;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,8 @@ public class ZeroEvenOdd {
 		for(int i = 0; i < nums.size(); i++) {
 			if(nums.get(i) == 0) {
 				zeroSem.acquire();
-				System.out.print(nums.get(i) + " ");
+				//System.out.print(nums.get(i) + " ");
+				output.add(nums.get(i));
 				if(i + 1 < nums.size()) {
 					release(nums.get(i + 1));
 				}
@@ -59,7 +60,8 @@ public class ZeroEvenOdd {
 		for(int i = 0; i < nums.size(); i++) {
 			if(nums.get(i) != 0 && nums.get(i) % 2 == 0) {
 				evenSem.acquire();
-				System.out.print(nums.get(i) + " ");
+				//System.out.print(nums.get(i) + " ");
+				output.add(nums.get(i));
 				if(i + 1 < nums.size()) {
 					release(nums.get(i + 1));
 				}
@@ -73,72 +75,16 @@ public class ZeroEvenOdd {
 		for(int i = 0; i < nums.size(); i++) {
 			if(nums.get(i) != 0 && nums.get(i) % 2 == 1) {
 				oddSem.acquire();
-				System.out.print(nums.get(i) + " ");
+				//System.out.print(nums.get(i) + " ");
+				output.add(nums.get(i));
 				if(i + 1 < nums.size()) {
 					release(nums.get(i + 1));
 				}
 			}
 		}
 	}
-}
-
-
-/*
- * Only calls getZero() */
-class Job1 implements Runnable{
-	private ZeroEvenOdd zeo;
-	Job1(ZeroEvenOdd zeo) {
-		this.zeo = zeo;
-	}
-
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		try {
-			zeo.getZero();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-}
-
-/*
- * Only calls getEven()*/
-class Job2 implements Runnable{
-	private ZeroEvenOdd zeo;
-	Job2(ZeroEvenOdd zeo) {
-		this.zeo = zeo;
-	}
-
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		try {
-			zeo.getEven();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-}
-
-/*
- * Only calls getOdd()*/
-class Job3 implements Runnable{
-	private ZeroEvenOdd zeo;
-	Job3(ZeroEvenOdd zeo) {
-		this.zeo = zeo;
-	}
-
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		try {
-			zeo.getOdd();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
+	public List<Integer> getOutput(){
+		return output;
 	}
 }
