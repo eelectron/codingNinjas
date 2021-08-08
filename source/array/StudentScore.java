@@ -10,6 +10,10 @@ import java.util.Map;
  * */
 public class StudentScore {
 	public int getBestAverageScore(String[][] scores) {
+		if(scores == null || scores.length == 0) {
+			return 0;
+		}
+		
 		// Todo
 		Map<String, Student> students = new HashMap<>();
         int n = scores.length;
