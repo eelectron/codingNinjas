@@ -1,6 +1,7 @@
 package source.string;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /*
@@ -12,19 +13,28 @@ import java.util.Map;
 
 public class FirstUniqueChar {
     public int firstUniqChar(String s) {
+    	if(s == null) {
+    		return -1;
+    	}
+    	
         int n = s.length();
-        Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> map = new LinkedHashMap<>();
         
         char ch;
         for(int i = 0; i < n; i++){
             ch = s.charAt(i);
-            map.put(ch, map.getOrDefault(ch, 0) + 1);
+            if(map.containsKey(ch)) {
+            	map.put(ch, -1);
+            }
+            else {
+            	map.put(ch, i);
+            }
         }
         
-        for(int i = 0; i < n; i++){
-            if(map.get(s.charAt(i)) == 1){
-                return i;
-            }
+        for(Map.Entry<Character, Integer> entry : map.entrySet()) {
+        	if(entry.getValue() != -1) {
+        		return entry.getValue();
+        	}
         }
         return -1;
     }
