@@ -1,4 +1,4 @@
-package numerical.src;
+package source.numerical;
 
 import java.util.HashMap;
 import java.util.Map;

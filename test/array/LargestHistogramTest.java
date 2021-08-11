@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import array.src.LargestHistogram;
+import source.array.LargestHistogram;
 
 class LargestHistogramTest {
 

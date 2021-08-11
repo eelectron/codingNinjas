@@ -1,4 +1,4 @@
-package numerical.src;
+package source.numerical;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

@@ -1,11 +1,11 @@
-package numerical.test;
+package test.numerical;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import numerical.src.PowerOfTen;
+import source.numerical.PowerOfTen;
 
 public class PowerOfTenTest {
     @Test

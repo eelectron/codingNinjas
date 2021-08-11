@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import array.src.FilterInteger;
+import source.array.FilterInteger;
 
 public class FilterIntegerTest {
 	@Test
