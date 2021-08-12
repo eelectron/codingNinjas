@@ -26,6 +26,6 @@ class CompressABTest {
 		assertEquals("ab*c", cab.compress("ababc"));
 		assertEquals("abcd*efgh", cab.compress("abcdabcdefgh"));
 		assertEquals("ab*c*efgh", cab.compress("ababcababcefgh"));
-		assertEquals("ab*c*efgh", cab.compress("abcabdabcabdefghi"));
+		assertEquals("abc*abd*efghi", cab.compress("abcabcabdabcabcabdefghi"));
 	}
 }

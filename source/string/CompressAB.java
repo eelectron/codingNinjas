@@ -27,8 +27,10 @@ public class CompressAB {
 		for (int i = n - 1; i >= 0; i--) {
 			totalLen = i + 1;
 			half = totalLen / 2;
+			
 			firstPart = s.substring(0, half);
 			secondPart = s.substring(half, totalLen);
+			
 			if (firstPart.equals(secondPart)) {
 				return compressHelper(s, half) + "*" + s.substring(n - end, n);
 			} else {
@@ -36,7 +38,7 @@ public class CompressAB {
 			}
 		}
 
-		// nothing is repeated
+		// nothing is repeated so return entire string
 		return s.substring(0, n);
 	}
 
