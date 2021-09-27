@@ -20,7 +20,7 @@ class MinSizeSubarrayTest {
 		tar1 = 6;
 		assertEquals(2, msa.minSubArrayLen(tar1, t1));
 		
-		t1 = new int[]{1,1,1,1,2,2,2,3,3};
+		t1 = new int[]{1,1,1,1,2,2,2,3,4};
 		tar1 = 6;
 		assertEquals(2, msa.minSubArrayLen(tar1, t1));
 		

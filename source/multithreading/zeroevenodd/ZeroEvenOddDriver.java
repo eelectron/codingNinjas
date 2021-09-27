@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ZeroEvenOddDriver {
-	public static void main(String[] args) {
-		List<Integer> nums = Arrays.asList(0,3,2,1,4,0,5,6,0,0,6);
+	public static void main(String[] args) throws InterruptedException {
+		List<Integer> nums = Arrays.asList(0,3,2,1,4,0,5,6,0,0,6,0,3,2,1,4,0,5,6,0,0,6,0,3,2,1,4,0,5,6,0,0,6,9);
 		ZeroEvenOdd zeo = new ZeroEvenOdd(nums);
 		ZeroEvenOddJob1 j1 = new ZeroEvenOddJob1(zeo);
 		ZeroEvenOddJob2 j2 = new ZeroEvenOddJob2(zeo);
@@ -18,5 +18,11 @@ public class ZeroEvenOddDriver {
 		t1.start();
 		t2.start();
 		t3.start();
+		
+		t1.join();
+		t2.join();
+		t3.join();
+		
+		System.out.println(zeo);
 	}
 }

@@ -32,11 +32,11 @@ class SparseVectorTest {
 	
 	@Test()
 	void testNullArray() {
+		int[] a1 = null;
+		int[] a2 = new int[] {100,0,0,100};
+		
 		assertThrows(IllegalArgumentException.class, 
-				() ->{
-					int[] a1 = null;
-					int[] a2 = new int[] {100,0,0,100};
-					
+				() ->{			
 					SparseVector sv1 = new SparseVector(a1);
 					SparseVector sv2 = new SparseVector(a2);
 				});
@@ -44,13 +44,24 @@ class SparseVectorTest {
 	
 	@Test()
 	void testEmptyArray() {
+		int[] a1 = {};
+		int[] a2 = new int[] {100,0,0,100};
+		
 		assertThrows(IllegalArgumentException.class, 
-				() ->{
-					int[] a1 = {};
-					int[] a2 = new int[] {100,0,0,100};
-					
+				() ->{			
 					SparseVector sv1 = new SparseVector(a1);
 					SparseVector sv2 = new SparseVector(a2);
 				});
+	}
+	
+	@Test
+	void testAllSame() {
+		//fail("Not yet implemented");
+		int[] a1 = new int[] {1,1,1,1,1,1,1,1};
+		int[] a2 = new int[] {1,1,1,1,1,1,1,1};
+		
+		SparseVector sv1 = new SparseVector(a1);
+		SparseVector sv2 = new SparseVector(a2);
+		assertEquals(8, sv1.dotProduct(sv2));
 	}
 }

@@ -38,5 +38,14 @@ public class StudentScoreTest {
 		
 		String[][] tc10 = {{"A", "2"},{"A", "9"},{"B", "2"}, {"B","7"}};
 		assertEquals(5, ss.getBestAverageScore(tc10));
+		
+		String[][] tc11 = {{"A", "1"},{"A", "4"}};
+		assertEquals(2, ss.getBestAverageScore(tc11));
+		
+		String[][] tc12 = {{"A", "-1"},{"A", "-4"}};
+		assertEquals(-3, ss.getBestAverageScore(tc12));
+		
+		String[][] tc13 = {{}};
+		assertEquals(0, ss.getBestAverageScore(tc13));
 	}
 }

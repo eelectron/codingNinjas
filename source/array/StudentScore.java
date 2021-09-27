@@ -10,7 +10,7 @@ import java.util.Map;
  * */
 public class StudentScore {
 	public int getBestAverageScore(String[][] scores) {
-		if(scores == null || scores.length == 0) {
+		if(scores == null || scores.length == 0 || scores[0].length == 0) {
 			return 0;
 		}
 		
@@ -53,36 +53,6 @@ public class StudentScore {
         }
 		return (int)bestAvg;
 	}
-	
-	public static void main(String[] args){
-		StudentScore ss = new StudentScore();
-	    System.out.println("Hello");
-	    ss.testGetBestAverageScore();
-	  }
-	  
-	  public void testGetBestAverageScore() {
-	    StudentScore ss = new StudentScore();
-	    
-	    boolean res = true;
-	    String[][] tc1 = {{"Bobby", "2"},{"Bobby", "2"}};
-	    res = res && (2 == ss.getBestAverageScore(tc1));
-	    
-	    String[][] tc2 = {};
-	    res = res && (0 == ss.getBestAverageScore(tc2));
-	    
-	    String[][] tc3 = {{"Bobby", "2"},{"Bobby", "2"},{"Charles", "4"},{"Charles", "4"}};
-	    res = res && (4 == ss.getBestAverageScore(tc3));
-	    
-	    String[][] tc4 = {{"Bobby", "-2"},{"Bobby", "-2"},{"Charles", "-4"},{"Charles", "-4"}};
-	    res = res && (-2 == ss.getBestAverageScore(tc4));
-	    
-	    if(res){
-	      System.out.println("All tests pass .");
-	    }
-	    else{
-	      System.out.println("Atleast one test is failing");
-	    }
-	  }
 }
 
 class Student{
@@ -102,5 +72,4 @@ class Student{
 	public String toString() {
 		return "Student [count=" + count + ", avg=" + avg + "]";
 	}
-	
 }
