@@ -30,6 +30,17 @@ class SparseVectorTest {
 		assertEquals(20000, sv1.dotProduct(sv2));
 	}
 	
+	@Test
+	void testHuge() {
+		//fail("Not yet implemented");
+		int[] a1 = new int[] {Integer.MAX_VALUE,0,0,Integer.MAX_VALUE};
+		int[] a2 = new int[] {Integer.MAX_VALUE,0,0,Integer.MAX_VALUE};
+		
+		SparseVector sv1 = new SparseVector(a1);
+		SparseVector sv2 = new SparseVector(a2);
+		assertEquals(9223372028264841218L, sv1.dotProduct(sv2));
+	}
+	
 	@Test()
 	void testNullArray() {
 		int[] a1 = null;

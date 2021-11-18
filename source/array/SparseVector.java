@@ -22,8 +22,8 @@ public class SparseVector {
     }
     
 	// Return the dotProduct of two sparse vectors
-    public int dotProduct(SparseVector vec) {
-        int sum = 0;
+    public long dotProduct(SparseVector vec) {
+        long sum = 0;
         Set<Integer> otherNonZeroInd = vec.getNonZeroIndex();
         
         Set<Integer> smallVec = nonZeroIndex;
@@ -38,7 +38,7 @@ public class SparseVector {
     }
     
     public Set<Integer> getNonZeroIndex(){
-        return nonZeroIndex;
+        return new HashSet<>(nonZeroIndex);
     }
     
     public int getItem(int idx){
