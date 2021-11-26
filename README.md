@@ -1,7 +1,7 @@
 # competitiveProgramming
 - https://leetcode.com/
 
-# Goldman Question
+# Problem Solving for Banking Domain Interview
 - [ClimbStair](https://github.com/eelectron/competitiveProgramming/blob/java/dynamicProgramming/ClimbStair.java)
 - [FirstUniqueChar](https://github.com/eelectron/competitiveProgramming/blob/java/source/string/FirstUniqueChar.java)
 - [FirstUniqueCharStream](https://github.com/eelectron/competitiveProgramming/blob/java/source/string/FirstUniqueCharStream.java)
